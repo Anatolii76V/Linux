@@ -1,0 +1,14 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:    # имя вашей сетевой карты  
+      dhcp4: no
+      addresses: [192.168.1.135/24]   # Меняем IP-адрес 
+      routes:
+        - to: default
+          via: 192.168.1.0  #  IP-адрес по умолчанию
+      nameservers:
+        addresses:
+          - 77.88.8.8   # адреса DNS-серверов можно другие 
+          - 77.88.8.1
